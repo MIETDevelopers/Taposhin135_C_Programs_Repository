@@ -4,7 +4,7 @@
 //Area of Square: side*side: side
 //Perimeter of Square: 4 * side: side
 //Area of Rectangle: Length * Breadth: Length, Breadth
-//Perimeter of Tectagnle: 2 * (Length + Breadth): Length, Breadth
+//Perimeter of Rectagnle: 2 * (Length + Breadth): Length, Breadth
 #include<stdio.h>
 int main(){
     float raduisOfCircle, sideOfSquare, legthOfRectangle, breadthOfRectangle;
