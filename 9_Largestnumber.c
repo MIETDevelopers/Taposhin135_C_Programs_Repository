@@ -1,14 +1,15 @@
+//To find the largest numbers
 #include <stdio.h>
-#include <math.h>
-
-int main()
-{
-	float x1,y1,x2,y2,distance;
-	printf("Enter point one(x1,y1)\n");
-	scanf("%f %f",&x1,&y1);
-	printf("Enter point two(x1,y1)\n");
-	scanf("%f %f",&x2,&y2);
-	distance=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
-	printf("distance between(%f,%f)&(%f,%f)is %f\n",x1,y1,x2,y1,distance);
-	return 0;
+int main(){
+  int i,num,n,large=0;
+  scanf("%d",&n); 
+  printf("How many numbers: %d\n",n);
+  for(i=0; i<n; i++){ //It will scan the numbers entered by user upto the limit setted by user.
+    scanf("%d",&num);
+    printf("\nEnter number %d: %d",i+1,num);
+    if(num>large)
+    large=num;
+  }
+  printf("\nThe Largest number is %d",large); //It will give the largest number as the output.
+  return 0;
 }
