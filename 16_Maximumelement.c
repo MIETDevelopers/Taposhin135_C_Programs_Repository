@@ -1,4 +1,4 @@
-//Program to find maximum element  in an array
+//Program to find maximum element and index an array
 #include<stdio.h>
 int main(){
 	int i;

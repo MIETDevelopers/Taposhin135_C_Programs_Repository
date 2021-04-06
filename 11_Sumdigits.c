@@ -1,4 +1,4 @@
-//A C program to t Find Sum of Digits of a Number using While Loop.
+//A C program to  Find Sum of Digits of a Number using While Loop.
 #include <stdio.h>
 int main(){
 int Number, Reminder, Sum=0;
