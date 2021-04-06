@@ -7,7 +7,7 @@ int main() {
 	printf("Enter number of students: ");
 	scanf("%d",&n);
 	FILE *fptr;
-	fptr=(fopen("C:\\student.txt","w"));
+	fptr=(fopen("C:\\31_Readwritemarks.txt","w"));
 	if(fptr==NULL) {
 		printf("Error!");
 		exit(1);
