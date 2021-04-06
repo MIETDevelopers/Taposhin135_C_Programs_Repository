@@ -1,33 +1,66 @@
-//A C Program to write .csv files.
-#include <stdio.h> //Including standard input output header files.
-#include <stdlib.h>//Including standard library header files.
-#include <string.h>//Including string header files. 
-int main() 
-{ 
-    FILE* fp = fopen("C:\\Taposhin_135_C_Programs_Repository\\035_WriteCSV.csv", "a+"); //File path.
-
-    char name[50]; 
-    int rollno, marks; 
-
-    if (!fp) { 
-        // Error in file opening 
-        printf("Can't open file\n"); 
-        return 0; 
+//A C program to write CSV file
+#include <conio.h>
+#include <stdio.h>
+#include <string.h>
+  
+// Driver Code
+int main()
+{
+    // Substitute the full file path
+    // for the string file_path
+    FILE* fp = fopen("C:\\Taposhin_135_C_Programs_Repository\\35_WriteCSV.csv", "r");
+  
+    if (!fp)
+        printf("Can't open file\n");
+  
+    else {
+        // Here we have taken size of
+        // array 1024 you can modify it
+        char buffer[1024];
+  
+        int row = 0;
+        int column = 0;
+  
+        while (fgets(buffer,
+                     1024, fp)) {
+                                 column = 0;
+            row++;
+  
+            // To avoid printing of column
+            // names in file can be changed
+            // according to need
+            if (row == 1)
+                continue;
+  
+            // Splitting the data
+            char* value = strtok(buffer, ", ");
+  
+            while (value) {
+                // Column 1
+                if (column == 0) {
+                    printf("Name :");
+                }
+  
+                // Column 2
+                if (column == 1) {
+                    printf("\tAccount No. :");
+                                    }
+  
+                // Column 3
+                if (column == 2) {
+                    printf("\tAmount :");
+                }
+  
+                printf("%s", value);
+                value = strtok(NULL, ", ");
+                column++;
+            }
+  
+            printf("\n");
+        }
+  
+        // Close the file
+        fclose(fp);
     }
-    // Asking user input for the new record to be added.   
-    printf("\nEnter Student Name\n"); 
-    scanf("%s", &name); 
-    printf("\nEnter Roll Number\n"); 
-    scanf("%d", &rollno); 
-    printf("\nEnter Attendance\n"); 
-    scanf("%d", &marks); 
-
-    // Saving data in file 
-    fprintf(fp, "%s, %d, %d\n", name, 
-            rollno, marks); 
-
-    printf("\nNew student deatils added."); 
-
-    fclose(fp); 
-    return 0; 
+    return 0;
 }
